@@ -1,4 +1,4 @@
-package com.helloapps.quizapp.modal;
+package com.helloapps.quizapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
