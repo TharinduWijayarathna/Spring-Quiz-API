@@ -1,9 +1,9 @@
 package com.helloapps.quizapp.service;
 
-import com.helloapps.quizapp.modal.Question;
-import com.helloapps.quizapp.modal.QuestionWrapper;
-import com.helloapps.quizapp.modal.Quiz;
-import com.helloapps.quizapp.modal.Response;
+import com.helloapps.quizapp.model.Question;
+import com.helloapps.quizapp.model.QuestionWrapper;
+import com.helloapps.quizapp.model.Quiz;
+import com.helloapps.quizapp.model.Response;
 import com.helloapps.quizapp.repo.QuestionRepository;
 import com.helloapps.quizapp.repo.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;

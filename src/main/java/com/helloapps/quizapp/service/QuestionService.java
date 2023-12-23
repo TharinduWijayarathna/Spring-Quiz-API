@@ -1,7 +1,7 @@
 package com.helloapps.quizapp.service;
 
 import com.helloapps.quizapp.repo.QuestionRepository;
-import com.helloapps.quizapp.modal.Question;
+import com.helloapps.quizapp.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
