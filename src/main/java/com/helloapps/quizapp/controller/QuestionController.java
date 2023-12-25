@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("question")
 public class QuestionController {
 
@@ -18,6 +19,11 @@ public class QuestionController {
     @GetMapping("/all")
     public ResponseEntity<List<Question>> allQuestions() {
         return questionService.allQuestions();
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<Question> getQuestion(@PathVariable Integer id) {
+        return questionService.getQuestion(id);
     }
 
     @GetMapping("/category/{category}")

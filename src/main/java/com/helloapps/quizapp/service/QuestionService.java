@@ -25,13 +25,22 @@ public class QuestionService {
         return new ResponseEntity<>(new ArrayList<>(0), HttpStatus.OK);
     }
 
+    public ResponseEntity<Question> getQuestion(Integer id) {
+       try {
+           return new ResponseEntity<>(questionRepository.findById(id).get(), HttpStatus.OK);
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+         return new ResponseEntity<>(new Question(), HttpStatus.NOT_FOUND);
+    }
+
     public ResponseEntity<List<Question>> questionsByCategory(String category) {
         try {
             return new ResponseEntity<>(questionRepository.findByCategory(category), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new ResponseEntity<>(new ArrayList<>(0), HttpStatus.OK);
+        return new ResponseEntity<>(new ArrayList<>(0), HttpStatus.NOT_FOUND);
     }
 
     public ResponseEntity<String> addQuestion(Question question) {
@@ -55,10 +64,10 @@ public class QuestionService {
     }
 
     public ResponseEntity<String> updateQuestion(Question question) {
-        try{
+        try {
             questionRepository.save(question);
             return new ResponseEntity<>("Question updated successfully", HttpStatus.OK);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return new ResponseEntity<>("Question not updated", HttpStatus.INTERNAL_SERVER_ERROR);
